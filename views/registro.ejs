@@ -1,0 +1,92 @@
+<%- include layouts/header.ejs %>
+
+<body>
+  
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+
+      <div class="col-md-7">
+        <!-- Register Details -->
+        <form action="/registro" method="POST" enctype="multipart/form-data">
+          <div class="billing-details">
+            <div class="section-title">
+              <h3 class="title">Las selecci&oacute;n de cursos m&aacute;s amplia del mundo<!-- Registrate, compra y comienza a realizar autoaprendizaje. --></h3>
+            </div>
+            <div class="form-group">
+              <input class="input" type="text" name="txtNombre" placeholder="Nombre(s)" autofocus required>
+            </div>
+            <div class="form-group">
+              <input class="input" type="text" name="txtApellido" placeholder="Apellido(s)" required>
+            </div>
+            <div class="form-group">
+              <input class="input" type="email" name="txtCorreo" placeholder="Correo Electrónico" required>
+            </div>
+            <div class="form-group">
+              <input class="input" type="password" name="txtContrasena" placeholder="Introduzca su contraseña" required>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                  <label class="input-group-btn">
+                      <span class="btn" style="background: #D10024; color: #fff; border-radius: 40px 0px 0px 40px;     font-weight: 700;">
+                          Seleccionar&hellip; <input id="fileFoto" name="fileFoto" type="file" accept="image/*" style="display: none;" onchange="loadFileInfo()">
+                      </span>
+                  </label>
+                  <input id="txtInfoFile" type="text" class="form-control" placeholder="Selecciona una imagen" readonly>
+              </div>
+            </div>
+            <div class="form-group">
+              <hr>
+              <input class="primary-btn" type="submit" value="Registrarse">
+            </div>
+          </div>
+        </form>
+        <!-- /Register Details -->       
+      </div>
+
+      <!-- Foto previa -->
+      <div class="col-md-5 order-details">
+        <div class="section-title">
+          <h3 class="title">Vista Previa Foto de Perfil.</h3>
+        </div>
+        <center>
+          <img id="imgDefault" src="img/usuarios/default.png" alt="default.png" style="max-width: 60%;">
+          <img id="imgPrevia" alt="Perfil" style="max-width: 60%; display: none;">
+        </center>
+      </div>
+      <!-- /Foto previa -->
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+
+<script type="text/javascript">
+  function loadFileInfo() {
+    var imgData = document.getElementById('fileFoto');
+
+    $("#txtInfoFile").attr({
+      'value': imgData.files[0].name
+    });
+
+    $("#imgDefault").css({
+      'max-width': '60%',
+      'display': 'none'
+    });
+
+    $("#imgPrevia").removeAttr("style");
+
+    $("#imgPrevia").css({
+      'max-width': '60%'
+    });
+
+    var output = document.getElementById('imgPrevia');
+    output.src = URL.createObjectURL(imgData.files[0]);
+  }
+</script>
+
+</body>
+
+<%- include layouts/footer.ejs %>

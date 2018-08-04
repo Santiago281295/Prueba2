@@ -1,0 +1,215 @@
+<%- include layouts/header.ejs %>
+	<body>	
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/icono-nodejs.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Node<br>JS</h3>
+								<a class="cta-btn"><!-- Shop now<i class="fa fa-arrow-circle-right"></i>  --></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/icono-dotnet.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Microsoft<br>.NET</h3>
+								<a href="#" class="cta-btn"><!-- Shop now<i class="fa fa-arrow-circle-right"></i>  --></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/icono-php.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Cursos de<br>PHP</h3>
+								<a href="#" class="cta-btn"><!-- Shop now<i class="fa fa-arrow-circle-right"></i>  --></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">Nuevos Productos</h3>
+							<!-- <div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+									<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
+									<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+								</ul>
+							</div> -->
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<!-- Deben de haber como mínimo 5 productos para que tenga buen presentación el carrusel -->
+										<!-- product -->
+										<% for(var i=0; i<queryNuevos.length; i++) { %>
+										<div class="product">
+											<div class="product-img">
+												<img src="./img/libros/<%= queryNuevos[i].Imagen %>" alt="">
+												<div class="product-label">
+													<!-- <span class="sale">-30%</span> -->
+													<span class="new">Nuevo</span>
+												</div>
+											</div>
+											<div class="product-body">
+												<p class="product-category">Nombre</p>
+												<h3 class="product-name"><a href="/cursos/<%= queryNuevos[i].IDProducto %>"><%= queryNuevos[i].Titulo %></a></h3>
+												<h4 class="product-price">$ <%= queryNuevos[i].Precio %><!--  <del class="product-old-price">$990.00</del> --></h4>
+												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="product-btns">
+													<!-- <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button> -->
+													<button class="add-to-compare"><i class="fa fa-usd"></i><span class="tooltipp">Comprar</span></button>
+													<button class="quick-view" onclick="window.location='/cursos/<%= queryNuevos[i].IDProducto %>'"><i class="fa fa-eye"></i><span class="tooltipp">Detalles</span></button>
+												</div>
+											</div>
+											<div class="add-to-cart">
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Al carrito</button>
+											</div>
+										</div>
+										<% } %>
+										<!-- /product -->
+									</div>
+									<div id="slick-nav-1" class="products-slick-nav"></div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">M&aacute;s vendidos</h3>
+							<!-- <div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
+									<li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
+									<li><a data-toggle="tab" href="#tab2">Cameras</a></li>
+									<li><a data-toggle="tab" href="#tab2">Accessories</a></li>
+								</ul>
+							</div> -->
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab2" class="tab-pane fade in active">
+									<div class="products-slick" data-nav="#slick-nav-2">
+										<!-- Deben de haber como mínimo 5 productos para que tenga buen presentación el carrusel -->
+										<!-- product -->
+										<% for(var i=0; i<queryExitos.length; i++) { %>
+										<div class="product">
+											<div class="product-img">
+												<img src="./img/libros/<%= queryExitos[i].Imagen %>" alt="">
+												<!-- <div class="product-label">
+													<span class="sale">-30%</span>
+													<span class="new">NEW</span>
+												</div> -->
+											</div>
+											<div class="product-body">
+												<p class="product-category">Nombre</p>
+												<h3 class="product-name"><a href="/cursos/<%= queryExitos[i].IDProducto %>"><%= queryExitos[i].Titulo %></a></h3>
+												<h4 class="product-price">$ <%= queryExitos[i].Precio %><!--  <del class="product-old-price">$990.00</del> --></h4>
+												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="product-btns">
+													<!-- <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Al carrito</span></button> -->
+													<button class="add-to-compare"><i class="fa fa-usd"></i><span class="tooltipp">Comprar</span></button>
+													<button class="quick-view" onclick="window.location='/cursos/<%= queryExitos[i].IDProducto %>'"><i class="fa fa-eye"></i><span class="tooltipp">Detalles</span></button>
+												</div>
+											</div>
+											<div class="add-to-cart">
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Al carrito</button>
+											</div>
+										</div>
+										<% } %>
+										<!-- /product -->
+									</div>
+									<div id="slick-nav-2" class="products-slick-nav"></div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- /Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+		
+		<%- include layouts/footer.ejs %>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title %></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <!-- <link rel="stylesheet" href="/Back/vendor/bootstrap/css/dataTables_bootstrap4.min.css"> -->
+    <link rel="stylesheet" href="/Back/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/bootstrap/css/bootstrap.min.css"> -->
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="/Back/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/font-awesome/css/font-awesome.min.css"> -->
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="/Back/css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="/Back/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/grasp_mobile_progress_circle-1.0.0.min.css"> -->
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="/Back/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/Back/css/style.default.css" id="theme-stylesheet">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/style.default.css" id="theme-stylesheet"> -->
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/Back/css/custom.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/custom.css"> -->
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+          <!-- User Info-->
+          <div class="sidenav-header-inner text-center"><img src="../../img/usuarios/<%= global.fotousuario %>" alt="person" class="img-fluid rounded-circle">
+            <h2 class="h5"><%= global.nombreUsuario %></h2><span>Administrador</span>
+          </div>
+          <!-- Small Brand information, appears on minimized sidebar-->
+          <div class="sidenav-header-logo"><a href="/Back" class="brand-small text-center"> <strong>W</strong><strong class="text-primary"><!-- D --></strong></a></div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+          <h5 class="sidenav-heading">Men&uacute;</h5>
+          <ul id="side-main-menu" class="side-menu list-unstyled">
+            <li><a href="/" target="_blank"> <i class="fa fa-desktop"></i>Vistar la Tienda</a></li>
+            <li><a href="/Back"> <i class="fa fa-dashboard"></i>Panel Administrativo</a></li>
+            <li><a href="/Back/cursos"> <i class="fa fa-book"></i>Gesti&oacute;n de Cursos</a></li>
+            <!-- <li><a href="/Back/usuarios"> <i class="fa fa-user"></i>Gesti&oacute;n de Usuarios</a></li> -->
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Gesti&oacute;n de Usuarios</a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="/Back/usuarios">Usuarios registrados</a></li>
+                <li><a href="/Back/clientes">Nuestros clientes</a></li>
+              </ul>
+            </li>
+          </ul>
+      </div>
+    </nav>
+    <div class="page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-bars"> </i></a><a href="/Back" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><span>Panel </span><strong class="text-primary">Administrativo</strong></div></a></div>
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Notifications dropdown-->
+                <!-- <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
+                  <ul aria-labelledby="notifications" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification d-flex justify-content-between">
+                          <div class="notification-content"><i class="fa fa-envelope"></i>You have 6 new messages </div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification d-flex justify-content-between">
+                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification d-flex justify-content-between">
+                          <div class="notification-content"><i class="fa fa-upload"></i>Server Rebooted</div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification d-flex justify-content-between">
+                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
+                          <div class="notification-time"><small>10 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-bell"></i>view all notifications                                            </strong></a></li>
+                  </ul>
+                </li> -->
+                <!-- Messages dropdown-->
+                <!-- <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
+                  <ul aria-labelledby="notifications" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
+                  </ul>
+                </li> -->
+                <!-- Languages dropdown    -->
+                <!-- <li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle"><img src="img/flags/16/GB.png" alt="English"><span class="d-none d-sm-inline-block">English</span></a>
+                  <ul aria-labelledby="languages" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/DE.png" alt="English" class="mr-2"><span>German</span></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/FR.png" alt="English" class="mr-2"><span>French                                                         </span></a></li>
+                  </ul>
+                </li> -->
+                <!-- Log out-->
+                <li class="nav-item"><a href="/logout" class="nav-link logout"> <span class="d-none d-sm-inline-block">Cerrar Sesi&oacute;n</span><i class="fa fa-sign-out"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Tables       </li> -->
+          </ul>
+        </div>
+      </div>
